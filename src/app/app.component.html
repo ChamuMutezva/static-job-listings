@@ -1,2 +1,5 @@
 <h1>Hello {{title}}</h1>
-<img [src]="src/assets/images/Chamu3.jpg" alt="header image">
+
+<button (click)="toggleImage()">Show Image</button>
+
+<img src="../assets/images/faceit.svg"  *ngIf="showImage"/>
