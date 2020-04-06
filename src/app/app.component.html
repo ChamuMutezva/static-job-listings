@@ -1,21 +1,35 @@
 <header>
-    <img class="header__img" src="../assets/images/bg-header-mobile.svg" alt="" srcset="">    
+    <img class="header__img" src="../assets/images/bg-header-mobile.svg" alt="" srcset="">
 </header>
 <main class="mainSection">
-    <div class="card" *ngFor="let item of jobRoles">
-        <img [src]= "item.logo"  alt="" >
-        <h4>{{item.new ? "new" : ""}}</h4>
-        <h4>{{item.featured ? "featured" : ""}}</h4>
-        <h4>{{item.position}}</h4>
-        <h4>{{item.postedAt}}</h4>
-        <h4>{{item.contract}}</h4>
-        <h4>{{item.location}}</h4>
-        <h2>{{item.role}}</h2>
-        <h4>{{item.level}}</h4>
-        <h4>{{item.languages}}</h4>
-        <h2>{{item.id}}</h2>   
-        <h3>{{item.company}}</h3>  
-    </div> 
+    <div class="cards" *ngFor="let item of jobRoles">
+        <div class="card">
+            <div class="card__primary">
+                <img class="card__img" [src]="item.logo" alt="">
+                <div class="card__features">
+                    <h4 class="card__features__item company">{{item.company}}</h4>
+                    <h4 class="card__features__item newFeatures">{{item.new ? "new" : ""}}</h4>
+                    <h4 class="card__features__item featured">{{item.featured ? "featured" : ""}}</h4>
+                </div>
+                <h4 class="card__primary__position">{{item.position}}</h4>
+                <ul class="card__contract">
+                    <li class="card__contract__item posting" >{{item.postedAt}}</li>
+                    <li class="card__contract__item contract">{{item.contract}}</li>
+                    <li class="card__contract__item location">{{item.location}}</li>
+                </ul>
+               
+            </div>
+
+            <div class="card__secondary">
+                <h4 class="card__secondary__item role">{{item.role}}</h4>
+                <h4 class="card__secondary__item level">{{item.level}}</h4>
+                <h4 class="card__secondary__item languages">{{item.languages}}</h4>
+
+            </div>
+
+
+        </div>
+    </div>
 
 </main>
 

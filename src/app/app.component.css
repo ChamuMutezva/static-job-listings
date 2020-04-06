@@ -5,5 +5,67 @@ header {
     background-size: contain;
 }
 .header__img {
-    width: 100%;
+    width: 100%;    
+}
+
+.mainSection {
+    background-color:  hsl(180, 52%, 96%) ;  
+}
+.cards {
+    padding: 45px 0 45px 0;
+}
+.cards:first-child {
+    padding: 80px 0 0 0;
+}
+.card:last-child {
+    padding: 45px 0;
+}
+.card {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+    background-color: white;
+}
+.card__primary {
+    position: relative;
+}
+
+img.card__img {
+    position: relative;
+    top: -35px;
+    left: 20px;
+    width: 16%;
+}
+.card__features {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+.card__features__item {
+    margin-left: 10px;
+}
+.card__primary__position {
+    margin-left: 29px;
+}
+.card__contract {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.card__contract__item {
+    margin-left: 24px;
+}
+.card__secondary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.role {
+    flex-grow: 1;
+}
+.level {
+    flex-grow: 1;
+}
+.languages {
+    flex-grow: 3;
 }
