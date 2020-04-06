@@ -1,0 +1,9 @@
+header {
+   /* background-image: url("../assets/images/bg-header-mobile.svg");
+    background-repeat: no-repeat;*/
+    background-color: hsl(180, 29%, 50%);
+    background-size: contain;
+}
+.header__img {
+    width: 100%;
+}
