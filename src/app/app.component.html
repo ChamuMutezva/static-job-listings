@@ -1,26 +1,25 @@
 <header>
     <img class="header__img" src="../assets/images/bg-header-mobile.svg" alt="" srcset="">    
 </header>
+<main class="mainSection">
+    <div class="card" *ngFor="let item of jobRoles">
+        <img [src]= "item.logo"  alt="" >
+        <h4>{{item.new ? "new" : ""}}</h4>
+        <h4>{{item.featured ? "featured" : ""}}</h4>
+        <h4>{{item.position}}</h4>
+        <h4>{{item.postedAt}}</h4>
+        <h4>{{item.contract}}</h4>
+        <h4>{{item.location}}</h4>
+        <h2>{{item.role}}</h2>
+        <h4>{{item.level}}</h4>
+        <h4>{{item.languages}}</h4>
+        <h2>{{item.id}}</h2>   
+        <h3>{{item.company}}</h3>  
+    </div> 
+
+</main>
 
 <!-- <button (click)="toggleImage()">Show Image</button>
 
 <img src="../assets/images/faceit.svg"  *ngIf="showImage"/>
 -->
-<div *ngFor="let item of jobRoles">
-    <img [src]= "item.logo"  alt="" >
-    <h4>{{item.new ? "new" : ""}}</h4>
-    <h4>{{item.featured ? "featured" : ""}}</h4>
-    <h4>{{item.position}}</h4>
-    <h4>{{item.postedAt}}</h4>
-    <h4>{{item.contract}}</h4>
-    <h4>{{item.location}}</h4>
-    <h2>{{item.role}}</h2>
-    <h4>{{item.level}}</h4>
-    <h4>{{item.languages}}</h4>
-    <h2>{{item.id}}</h2>
-   
-    <h3>{{item.company}}</h3>
-    
-   
-
-</div>
