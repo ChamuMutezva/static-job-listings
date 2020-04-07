@@ -21,41 +21,53 @@ header {
     padding: 45px 0;
 }
 .card {
-    width: 90%;
+    width: 330px;
     margin: auto;
     padding: 10px 0;
     background-color: white;
+    border-left: 5px solid green;
+    border-radius: 7px;
 }
 .card__primary {
     position: relative;
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid black;
 }
 
 img.card__img {
     position: relative;
-    top: -35px;
+    top: -73px;
     left: 20px;
     width: 16%;
 }
 .card__features {
     display: flex;
     justify-content: flex-start;
-    margin-left: 20px;
+   margin-top: -45px;
 }
 .card__features__item {
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
 }
 .card__primary__position {
     margin-left: 29px;
+    margin-bottom: 15px;
 }
 .card__contract {
     display: flex;
-    margin-left: 20px;
+   /* margin-left: 20px;*/
     margin-bottom: 20px;
 }
 .card__contract__item {
     margin-left: 24px;
+    margin-top: 20px;
+}
+.card__contract__item:first-child {
+    list-style: none;
 }
 .card__secondary {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
