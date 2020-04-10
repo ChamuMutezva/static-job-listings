@@ -17,7 +17,7 @@ header {
     padding: 45px 0 45px 0;
 }
 .cards:first-child {
-    padding: 80px 0 0 0;
+    padding: 54px 0 0 0;
 }
 .card:last-child {
     padding: 45px 0;
@@ -68,35 +68,43 @@ img.card__img {
     border-radius: 20px;
 }
 .card__primary__position {
-    margin-left: 29px;
+    margin-left: 15px;
     margin-bottom: 15px;
 }
 .card__contract {
     display: flex;
-   /* margin-left: 20px;*/
+   justify-content: space-around;
     margin-bottom: 20px;
 }
-.card__contract__item {
-    margin-left: 24px;
+.card__contract__item {    
     margin-top: 20px;
 }
 .card__contract__item:first-child {
     list-style: none;
 }
 .card__secondary {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    width: 90%;
+    margin: 20px auto 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: start;
+    grid-row-gap: 15px;
+}
+
+.card__secondary__item {
+    background-color: hsl(180, 52%, 96%);
+    color: hsl(180, 29%, 50%);
+    padding: 4px 7px;
+    border-radius: 7px;
 }
 .role {
-    flex-grow: 1;
+   /* flex-grow: 1; */
 }
 .level {
-    flex-grow: 1;
+   /* flex-grow: 1; */
 }
 .languages {
-    flex-grow: 3;
+   /* flex-grow: 3; */
 }
 
 @media screen and(min-width: 790px) {
