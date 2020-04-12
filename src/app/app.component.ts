@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { IJobListing } from './jobListing'
 import { JobRolesService } from './job-roles.service'
 
@@ -25,7 +26,9 @@ export class AppComponent implements OnInit {
   errorMsg: string;
   filteredRoles: IJobListing[];
   jobRoles: IJobListing[] = [];
-  constructor(private jobRolesService: JobRolesService) {
+  role = this.route.snapshot.paramMap.get('CSS');
+  constructor(private jobRolesService: JobRolesService ,
+    private route: ActivatedRoute, private router: Router) {
 
   }
 
@@ -43,7 +46,11 @@ export class AppComponent implements OnInit {
       error => this.errorMsg = <any>error
     );
 
-  }
+    this.jobRolesService.getRoleByLang(this.role, (resultRole) => {
+      console.log("role are", resultRole)
+    })
+
+  } 
 
   performFilter(filterBy: string): IJobListing[] {
     filterBy = filterBy.toLocaleLowerCase();
