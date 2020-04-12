@@ -25,9 +25,10 @@
 
             </div>
 
-            <div class="card__secondary">
+            <div class="card__secondary" >
                 <h5 class="card__secondary__item role">{{item.role}}</h5>
                 <h5 class="card__secondary__item level">{{item.level}}</h5>
+                <h5 class="card__secondary__item tools" *ngFor="let tool of item.tools" >{{tool}}</h5>
                 <h5 class="card__secondary__item languages" *ngFor="let language of item.languages">{{language}}</h5>
 
             </div>
