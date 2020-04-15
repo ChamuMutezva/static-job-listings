@@ -22,41 +22,76 @@ export class JobRolesService {
       catchError(this.handleError)
     )
   }
-
+  /*
+getMovie(movieID, callback: (data) => void) { 
+        return this.getMovies().subscribe(result => {            
+          // check the api.json for the movieID           
+          console.log('---------');
+          let returnObj = {};
+          const matchedResult = result.map(movie=>{
+            if(movie.objectId == movieID){
+                console.log('returning movie details ', movie);
+                returnObj = movie;
+            }
+          });          
+          console.log('---------');
+          callback(returnObj);  // execute the callback function to act on the matched result;
+        },
+          error => {
+            console.log(error);
+          }
+        );
+      }
+  */
   getRoleByLang(langName, callback: (data) => void) {
     return this.getRoles().subscribe(result => {
-     //console.log(result)
-      const miniResults = result.map(role => {
-        const {languages, company } = role
-       console.log(company)
+      let returnObj = {};
+      // console.log(result)
+      const miniResults = result.map(listings => {
+        const { languages } = listings
+        if (languages == undefined) {
+          return
+        } else {
+         // console.log(listings.languages.length)
+          const langResults = languages.filter(lang => {
+            if (lang == "JavaScript") {
+              console.log(languages)
+              returnObj = listings
+            }
+          })
+        } 
+
+        
       })
+      callback(returnObj)
     })
+   
   }
 
 
- /* getRoleByLang(langName, callback: (data) => void) {
-    return this.getRoles().subscribe(result => {
-      console.log('---------');
-      console.log(result)
-      let returnObj = {};
-      const matchedResult = result.map(role => {
-        if (role.languages) {
-          role.languages.map(lang => {            
-            console.log('returning language details ', lang);
-            returnObj = lang;             
-
-          })       
-        }        
-      });
-      console.log('---------', returnObj);
-     callback(returnObj);  // execute the callback function to act on the matched result;
-    
-  },
-      error => {
-        console.log(error);
-      }
-    );
-  } */
+  /* getRoleByLang(langName, callback: (data) => void) {
+     return this.getRoles().subscribe(result => {
+       console.log('---------');
+       console.log(result)
+       let returnObj = {};
+       const matchedResult = result.map(role => {
+         if (role.languages) {
+           role.languages.map(lang => {            
+             console.log('returning language details ', lang);
+             returnObj = lang;             
+ 
+           })       
+         }        
+       });
+       console.log('---------', returnObj);
+      callback(returnObj);  // execute the callback function to act on the matched result;
+     
+   },
+       error => {
+         console.log(error);
+       }
+     );
+   } */
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

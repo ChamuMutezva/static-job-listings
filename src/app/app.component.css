@@ -97,6 +97,10 @@ img.card__img {
     padding: 4px 7px;
     border-radius: 7px;
 }
+
+.card__secondary__item:hover {
+    cursor: pointer;    
+}
 .role {
    /* flex-grow: 1; */
 }

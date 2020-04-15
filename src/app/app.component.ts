@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { IJobListing } from './jobListing'
 import { JobRolesService } from './job-roles.service'
+import { Form } from "@angular/forms"
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,8 @@ export class AppComponent implements OnInit {
   errorMsg: string;
   filteredRoles: IJobListing[];
   jobRoles: IJobListing[] = [];
-  role = this.route.snapshot.paramMap.get('CSS');
+  role = this.route.snapshot.paramMap.get('level');
+  
   constructor(private jobRolesService: JobRolesService ,
     private route: ActivatedRoute, private router: Router) {
 
@@ -46,16 +48,19 @@ export class AppComponent implements OnInit {
       error => this.errorMsg = <any>error
     );
 
+   
     this.jobRolesService.getRoleByLang(this.role, (resultRole) => {
-      console.log("role are", resultRole)
+      console.log(this.role)
+      console.log("role are", resultRole);
+      console.log(resultRole.company);
     })
 
   } 
 
   performFilter(filterBy: string): IJobListing[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.jobRoles.filter((role: IJobListing) =>
-      role.role.toLocaleLowerCase().indexOf(filterBy) !== -1)
+    return this.jobRoles.filter((jobRole: IJobListing) =>
+      jobRole.role.toLocaleLowerCase().indexOf(filterBy) !== -1)
 
   }
 
