@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
 
   title = 'static-job-listings';
   showImage: boolean = false;
-  logoUrl: string = '../assets/'
+  logoUrl: string = '../assets/';
+  role: string;
 
   _listFilter: string;
   get listFilter(): string {
@@ -27,10 +28,10 @@ export class AppComponent implements OnInit {
   errorMsg: string;
   filteredRoles: IJobListing[];
   jobRoles: IJobListing[] = [];
-  role = this.route.snapshot.paramMap.get('level');
-  
-  constructor(private jobRolesService: JobRolesService ,
+
+  constructor(private jobRolesService: JobRolesService,
     private route: ActivatedRoute, private router: Router) {
+     // this.filteredRoles = this.jobRoles;
 
   }
 
@@ -43,26 +44,31 @@ export class AppComponent implements OnInit {
       jobRoles => {
         this.jobRoles = jobRoles;
         this.filteredRoles = this.jobRoles;
-        
+
       },
       error => this.errorMsg = <any>error
     );
 
-   
-    this.jobRolesService.getRoleByLang(this.role, (resultRole) => {
+    this.role = this.route.snapshot.paramMap.get("role");
+    this.jobRolesService.getRoleByRole(this.role, (resultRole) => {
       console.log(this.role)
       console.log("role are", resultRole);
       console.log(resultRole.company);
     })
 
-  } 
+  }
 
   performFilter(filterBy: string): IJobListing[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.jobRoles.filter((jobRole: IJobListing) =>
-      jobRole.role.toLocaleLowerCase().indexOf(filterBy) !== -1)
+      jobRole.role.toLocaleLowerCase().indexOf(filterBy) !== -1)     
 
   }
+
+  Submit(event): void {
+    console.log("well done", event)
+  }
+  
 
 
 }
