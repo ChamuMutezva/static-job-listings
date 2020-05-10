@@ -47,9 +47,10 @@ export class JobRolesService {
    getRoleByRole(roleName, callback: (data) => void) {
      return this.getRoles().subscribe(result => {
        console.log('---------');
-       console.log(result)
+     //  console.log(result)
        let returnObj = {};
        const matchedResult = result.map(posRole=> {
+        //console.log(posRole);
          const {role} = posRole;
          console.log(role);
            if(role == roleName) {
