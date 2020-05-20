@@ -23,7 +23,7 @@ header {
     padding: 45px 0;
 }
 .card {
-    width: 330px;
+    width: 80%;
     margin: auto;
     padding: 10px 0;
     background-color: white;
@@ -111,7 +111,37 @@ img.card__img {
    /* flex-grow: 3; */
 }
 
-@media screen and(min-width: 790px) {
-             
+@media screen and (min-width: 790px) {
+    .card {
+        display: flex;
+    }
+    .card__primary {
+        display: flex;
+        align-items: center;
+        border-bottom: none;
+    }
+    img.card__img {
+        top: 0;
+        width: 15%;
+    }
+    .card__primaries {
+        margin-left: 25px;
+    }
+    .card__features {        
+        margin-top: 0;
+    }  
+    .card__primary__position {       
+        margin-bottom: 0;
+    } 
+    .card__contract__item {
+        margin-top: 15px;
+    } 
+    .card__contract__item {
+        margin-right: 30px;
+    }   
+    .card__secondary {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+        align-content: center;       
+    } 
        
 }

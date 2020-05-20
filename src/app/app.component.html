@@ -1,37 +1,39 @@
 <header>
     <picture>
         <source media="(min-width: 790px)" srcset="../assets/images/bg-header-desktop.svg">
-     <!--  <source media="(min-width: 480px)" srcset="../assets/images/bg-header-desktop.svg"> -->
-       <img class="header__img" src="../assets/images/bg-header-mobile.svg" alt=""> 
+        <!--  <source media="(min-width: 480px)" srcset="../assets/images/bg-header-desktop.svg"> -->
+        <img class="header__img" src="../assets/images/bg-header-mobile.svg" alt="">
     </picture>
 
 </header>
-  <!-- <app-categories [title]="title"></app-categories> -->
+<!-- <app-categories [title]="title"></app-categories> -->
 
 <main class="mainSection">
     <div class="cards" *ngFor="let item of filteredRoles">
         <div class="card">
             <div class="card__primary">
                 <img class="card__img" [src]="item.logo" alt="">
-                <div class="card__features">
-                    <h5 class="card__features__item company">{{item.company}}</h5>
-                    <h5 class="card__features__item newFeatures" *ngIf="item.new">NEW!</h5>
-                    <h5 class="card__features__item featured" *ngIf="item.featured">FEATURED</h5>
+                <div class="card__primaries">
+                    <div class="card__features">
+                        <h5 class="card__features__item company">{{item.company}}</h5>
+                        <h5 class="card__features__item newFeatures" *ngIf="item.new">NEW!</h5>
+                        <h5 class="card__features__item featured" *ngIf="item.featured">FEATURED</h5>
+                    </div>
+                    <h5 class="card__primary__position">{{item.position}}</h5>
+                    <ul class="card__contract">
+                        <li class="card__contract__item posting">{{item.postedAt}}</li>
+                        <li class="card__contract__item contract">{{item.contract}}</li>
+                        <li class="card__contract__item location">{{item.location}}</li>
+                    </ul>
                 </div>
-                <h5 class="card__primary__position">{{item.position}}</h5>
-                <ul class="card__contract">
-                    <li class="card__contract__item posting">{{item.postedAt}}</li>
-                    <li class="card__contract__item contract">{{item.contract}}</li>
-                    <li class="card__contract__item location">{{item.location}}</li>
-                </ul>
-
             </div>
 
-            <div class="card__secondary" >
+            <div class="card__secondary">
                 <h5 class="card__secondary__item role" (click)="Submit(item.role)">{{item.role}}</h5>
-                <h5 class="card__secondary__item level" (click)="Submit(item.level)" >{{item.level}}</h5>
-                <h5 class="card__secondary__item tools" *ngFor="let tool of item.tools" >{{tool}}</h5>
-                <h5 class="card__secondary__item languages" *ngFor="let language of item.languages" (click)="Submit(language)">{{language}}</h5>
+                <h5 class="card__secondary__item level" (click)="Submit(item.level)">{{item.level}}</h5>
+                <h5 class="card__secondary__item tools" *ngFor="let tool of item.tools">{{tool}}</h5>
+                <h5 class="card__secondary__item languages" *ngFor="let language of item.languages"
+                    (click)="Submit(language)">{{language}}</h5>
 
             </div>
 

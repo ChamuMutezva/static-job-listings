@@ -76,7 +76,9 @@ export class AppComponent implements OnInit {
         const {role} = posRole;
        // console.log(event.toLocaleLowerCase() == role.toLocaleLowerCase());
         if ( event.toLocaleLowerCase() == role.toLocaleLowerCase() ){
+         // this.filteredRoles = posRole
           return posRole;
+
         }        
       })
 
