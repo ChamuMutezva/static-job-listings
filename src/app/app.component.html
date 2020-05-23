@@ -8,8 +8,10 @@
 </header>
 <!-- <app-categories [title]="title"></app-categories> -->
 
-<main class="mainSection">
+<main class="mainSection">  
+    <div class="filterSection"></div> 
     <div class="cards" *ngFor="let item of filteredRoles">
+       
         <div class="card">
             <div class="card__primary">
                 <img class="card__img" [src]="item.logo" alt="">

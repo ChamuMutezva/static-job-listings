@@ -71,12 +71,14 @@ export class AppComponent implements OnInit {
      console.log(event, ' is already in the list');
      console.log(this.filteredListItems);
    } else {
+     console.log(`${event} is being added to the list`);
       this.filteredListItems.push(event.toLocaleLowerCase());
+      console.log(this.filteredListItems);
      const displayRoles = this.filteredRoles.filter(posRole => {
         const {role} = posRole;
        // console.log(event.toLocaleLowerCase() == role.toLocaleLowerCase());
         if ( event.toLocaleLowerCase() == role.toLocaleLowerCase() ){
-         // this.filteredRoles = posRole
+         console.log(posRole)
           return posRole;
 
         }        

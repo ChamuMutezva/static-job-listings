@@ -12,6 +12,14 @@ header {
 
 .mainSection {
     background-color:  hsl(180, 52%, 96%) ;  
+    padding-top: 10px;
+}
+.filterSection {
+    background-color: white;
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+    display: none;
 }
 .cards {
     padding: 45px 0 45px 0;
@@ -112,6 +120,9 @@ img.card__img {
 }
 
 @media screen and (min-width: 790px) {
+    .cards {
+        padding: 45px 0 45px 0;
+    }
     .card {
         display: flex;
     }
@@ -143,5 +154,8 @@ img.card__img {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
         align-content: center;       
     } 
+    .mainSection {
+        padding-top: 30px;
+    }
        
 }
