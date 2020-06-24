@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   title = 'static-job-listings';
   showImage: boolean = false;
   logoUrl: string = '../assets/';
-  role: string;
+  //role: string;
   filteredListItems : string[] = [];
 
   _listFilter: string;
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
       jobRoles => {
         this.jobRoles = jobRoles;
         this.filteredRoles = this.jobRoles;
-        console.log(this.filteredRoles);
+     //   console.log(this.filteredRoles);
       },
       error => this.errorMsg = <any>error
     );
@@ -74,17 +74,20 @@ export class AppComponent implements OnInit {
      console.log(`${event} is being added to the list`);
       this.filteredListItems.push(event.toLocaleLowerCase());
       console.log(this.filteredListItems);
+
      const displayRoles = this.filteredRoles.filter(posRole => {
-        const {role} = posRole;
+        const {role, level} = posRole;
        // console.log(event.toLocaleLowerCase() == role.toLocaleLowerCase());
         if ( event.toLocaleLowerCase() == role.toLocaleLowerCase() ){
          console.log(posRole)
+         //const filterSection = document.querySelector('.filterSection');
+         //console.log(filterSection);
           return posRole;
-
         }        
       })
 
      console.log(displayRoles);
+     this.filteredRoles = displayRoles
      // console.log(role);
    }
   }

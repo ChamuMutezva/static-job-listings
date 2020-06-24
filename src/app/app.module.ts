@@ -6,12 +6,17 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoriesComponent } from './categories.component';
+import { HeaderComponent } from './header/header.component';
+import { FilterComponent } from './filter/filter.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent
+    CategoriesComponent,
+   HeaderComponent,
+   FilterComponent
   ],
   imports: [
     BrowserModule,

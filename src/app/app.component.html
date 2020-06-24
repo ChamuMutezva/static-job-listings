@@ -1,15 +1,9 @@
-<header>
-    <picture>
-        <source media="(min-width: 790px)" srcset="../assets/images/bg-header-desktop.svg">
-        <!--  <source media="(min-width: 480px)" srcset="../assets/images/bg-header-desktop.svg"> -->
-        <img class="header__img" src="../assets/images/bg-header-mobile.svg" alt="">
-    </picture>
-
-</header>
-<!-- <app-categories [title]="title"></app-categories> -->
+<body>
+<app-header></app-header>
+<app-filter></app-filter>
 
 <main class="mainSection">  
-    <div class="filterSection"></div> 
+   
     <div class="cards" *ngFor="let item of filteredRoles">
        
         <div class="card">
@@ -49,3 +43,4 @@
 
 <img src="../assets/images/faceit.svg"  *ngIf="showImage"/>
 -->
+</body>

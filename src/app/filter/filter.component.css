@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.filterSection {
+    background-color: white;
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+    display: none;
+}
+.filterDisplay {
+    display: block;
+}
