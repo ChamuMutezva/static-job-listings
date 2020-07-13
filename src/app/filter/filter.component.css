@@ -6,9 +6,9 @@
 .filterSection {
     background-color: white;
     width: 80%;
-    padding: 15px;
+    padding: 20px;
     margin: auto;
-    display: none;
+    /* display: none; */
 }
 .filterDisplay {
     display: block;
